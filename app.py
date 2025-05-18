@@ -3,21 +3,30 @@ import gradio as gr
 import requests
 import inspect
 import pandas as pd
+from langchain_core.messages import HumanMessage
+from agent import build_graph
 
 # (Keep Constants as is)
 # --- Constants ---
 DEFAULT_API_URL = "https://agents-course-unit4-scoring.hf.space"
 
 # --- Basic Agent Definition ---
-# ----- THIS IS WERE YOU CAN BUILD WHAT YOU WANT ------
+# ----- THIS IS WHERE YOU CAN BUILD WHAT YOU WANT ------
 class BasicAgent:
+    """LangGraph Agent that uses a graph to process messages."""
     def __init__(self):
         print("BasicAgent initialized.")
+        self.graph = build_graph()
+
     def __call__(self, question: str) -> str:
         print(f"Agent received question (first 50 chars): {question[:50]}...")
-        fixed_answer = "This is a default answer."
-        print(f"Agent returning fixed answer: {fixed_answer}")
-        return fixed_answer
+        # Createsa messages list with the question as a HumanMessage
+        messages = [HumanMessage(content=question)]
+        # Invokes the graph with the messages to get the answer
+        messages = self.graph.invoke({"messages": messages})
+        # Extracts the answer from the last message
+        answer = messages['messages'][-1].content
+        return answer[10:]
 
 def run_and_submit_all( profile: gr.OAuthProfile | None):
     """
