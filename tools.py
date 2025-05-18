@@ -1,3 +1,8 @@
+from langchain_community.tools.tavily_search import TavilySearchResults
+from langchain_community.document_loaders import WikipediaLoader
+from langchain_community.document_loaders import ArxivLoader
+from langchain_core.tools import tool
+
 # Tools definition
 @tool
 def multiply(a: int, b: int) -> int:
