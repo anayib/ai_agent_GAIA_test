@@ -5,7 +5,6 @@ langchain-community
 langchain-core
 pgvector
 python-dotenv
-langchain-google-genai
 langchain-huggingface
 langchain-groq
 langchain-tavily    
