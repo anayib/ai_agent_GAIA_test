@@ -48,4 +48,14 @@ Key Features:
     - Vector-based retrieval for similar questions
 Environment variable based configuration
 
+Additional files to set up data embeddings:
+
+- gaia/metadata_gaia.jsonl : contains questions and answers from the Gaia dataset
+- import_data.py : script to import data into the vector store
+- test_database.py : script to test the vector store
+- metadata.jsonl : contains questions and answers from the final assignment dataset
+
+To import data into the vector store, run the import_data.py script.
+To test the vector store, run the test_database.py script.
+
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
