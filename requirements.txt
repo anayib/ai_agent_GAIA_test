@@ -15,3 +15,6 @@ supabase
 arxiv
 pymupdf
 wikipedia
+transformers
+sentence-transformers
+tqdm
