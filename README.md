@@ -72,7 +72,7 @@ To test the vector store, run the test_database.py script.
 1. Add the space origin URL as a remote: `git remote set-url origin https://<your-username>:<your-token>@huggingface.co/spaces/anayib/hf-final-agent`
 3. `git add < . | [..file names]>`
 2. `git commit -m "<case>Your commit message"`
-3. `git push origin <branch name>`
+3. `git push huggingface <branch name>`
 
 
 ## Contributing
