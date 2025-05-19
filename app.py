@@ -26,7 +26,7 @@ class BasicAgent:
         messages = self.graph.invoke({"messages": messages})
         # Extracts the answer from the last message
         answer = messages['messages'][-1].content
-        return answer[10:]
+        return answer[14:]
 
 def run_and_submit_all( profile: gr.OAuthProfile | None):
     """
